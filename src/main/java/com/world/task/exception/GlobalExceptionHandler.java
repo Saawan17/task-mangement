@@ -1,5 +1,7 @@
 package com.world.task.exception;
 
+import com.world.task.dto.ResponseDTO;
+import com.world.task.enums.CommonEnum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -78,4 +80,20 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ResponseDTO> handleIllegalArgumentException(
+            IllegalArgumentException ex) {
+
+        ResponseDTO response = ResponseDTO.getResponseDto(
+                CommonEnum.FAILURE,
+                "400",
+                ex.getMessage(),
+                null,
+                LocalDateTime.now()
+        );
+
+        return ResponseEntity.badRequest().body(response);
+    }
+
 }
