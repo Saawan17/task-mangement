@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.*;
 
 import java.util.UUID;
 
@@ -13,11 +12,6 @@ import java.util.UUID;
         name = "users",
         uniqueConstraints = @UniqueConstraint(columnNames = "email")
 )
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class UserModel {
 
     @Id
@@ -38,4 +32,37 @@ public class UserModel {
         this.userId = UUID.randomUUID().toString().replace("-", "").substring(0, 8);
     }
 
+    public UserModel() {
+        super();
+    }
+
+    public UserModel(String userId, String name, String email) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
