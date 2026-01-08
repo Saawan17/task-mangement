@@ -1,6 +1,6 @@
 package com.world.task.enums;
 
-import com.world.task.dto.ResponseInterface;
+import com.world.task.dto.response.ResponseInterface;
 
 public enum CommonEnum implements ResponseInterface {
 

@@ -1,4 +1,4 @@
-package com.world.task.dto;
+package com.world.task.dto.response;
 
 public interface ResponseInterface {
     String getMethodResponce();

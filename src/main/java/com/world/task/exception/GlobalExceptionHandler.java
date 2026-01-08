@@ -1,6 +1,6 @@
 package com.world.task.exception;
 
-import com.world.task.dto.ResponseDTO;
+import com.world.task.dto.response.ResponseDTO;
 import com.world.task.enums.CommonEnum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

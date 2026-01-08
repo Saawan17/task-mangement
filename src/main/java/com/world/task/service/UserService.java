@@ -1,7 +1,7 @@
 package com.world.task.service;
 
-import com.world.task.dto.PagedResponseDTO;
-import com.world.task.dto.UserDTO;
+import com.world.task.dto.response.PagedResponseDTO;
+import com.world.task.dto.user.UserDTO;
 import com.world.task.exception.DuplicateResourceException;
 import com.world.task.exception.ResourceNotFoundException;
 import com.world.task.model.UserModel;

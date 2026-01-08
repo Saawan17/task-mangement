@@ -1,8 +1,8 @@
 package com.world.task.controller;
 
-import com.world.task.dto.PagedResponseDTO;
-import com.world.task.dto.UserDTO;
-import com.world.task.dto.ResponseDTO;
+import com.world.task.dto.response.PagedResponseDTO;
+import com.world.task.dto.user.UserDTO;
+import com.world.task.dto.response.ResponseDTO;
 import com.world.task.enums.CommonEnum;
 import com.world.task.model.UserModel;
 import com.world.task.service.UserService;
