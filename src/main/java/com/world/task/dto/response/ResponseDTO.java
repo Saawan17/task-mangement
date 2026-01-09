@@ -23,12 +23,12 @@ public class ResponseDTO {
 
     public ResponseDTO() {
         this.responseId = CommonEnum.INVALID;
-        this.response = responseId.getMethodResponce();
+        this.response = responseId.getMethodResponse();
     }
 
     public ResponseDTO(ResponseInterface responseId) {
         this.responseId = responseId;
-        this.response = responseId.getMethodResponce();
+        this.response = responseId.getMethodResponse();
 
     }
 
@@ -47,22 +47,22 @@ public class ResponseDTO {
 
     public static ResponseDTO getResponseDto(ResponseInterface responseId, Object data) {
         ResponseDTO responseDto = new ResponseDTO(responseId);
-        responseDto.setData(data); // Set the data object
+        responseDto.setData(data);
         return responseDto;
     }
 
     public static ResponseDTO getResponseDto(ResponseInterface responseId, String message, Object data) {
         ResponseDTO responseDto = new ResponseDTO(responseId);
-        responseDto.setMessage(message); // Set the message
-        responseDto.setData(data); // Set the data object
+        responseDto.setMessage(message);
+        responseDto.setData(data);
         return responseDto;
     }
 
     public static ResponseDTO getResponseDto(ResponseInterface responseId, String status, String message, Object data, LocalDateTime dateTime) {
         ResponseDTO responseDto = new ResponseDTO(responseId);
-        responseDto.setMessage(message); // Set the message
+        responseDto.setMessage(message);
         responseDto.setStatus(status);
-        responseDto.setData(data);// Set the status
+        responseDto.setData(data);
         responseDto.setDatetime(dateTime);
         return responseDto;
     }

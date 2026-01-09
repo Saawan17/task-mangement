@@ -20,7 +20,7 @@ public enum CommonEnum implements ResponseInterface {
     }
 
     @Override
-    public String getMethodResponce() {
+    public String getMethodResponse() {
         return response;
     }
 
