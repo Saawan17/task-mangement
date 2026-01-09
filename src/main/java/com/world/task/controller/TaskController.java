@@ -68,7 +68,7 @@ public class TaskController {
         );
     }
 
-    @GetMapping("/{taskId}")
+    @GetMapping("/get/{taskId}")
     public ResponseDTO getTaskById(@PathVariable("taskId") String taskId) {
 
         TaskDTO task = taskService.getTaskById(taskId);
