@@ -26,7 +26,7 @@ public class AuthController {
         String token = JwtUtil.generateToken(request.getUsername());
 
         return ResponseDTO.getResponseDto(
-                CommonEnum.SUCCESS,
+                CommonEnum.ALF,
                 "200",
                 "Login successful",
                 token,

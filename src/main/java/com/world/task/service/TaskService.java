@@ -2,7 +2,6 @@ package com.world.task.service;
 
 import com.world.task.dto.response.PagedResponseDTO;
 import com.world.task.dto.task.TaskDTO;
-import com.world.task.dto.user.UserDTO;
 import com.world.task.enums.TaskPriority;
 import com.world.task.enums.TaskStatus;
 import com.world.task.exception.ResourceNotFoundException;
@@ -150,7 +149,7 @@ public class TaskService {
         return dto;
     }
 
-    public TaskModel updateTask(String taskId, TaskDTO request) {
+    public void updateTask(String taskId, TaskDTO request) {
 
         TaskModel task = taskRepository.findById(taskId)
                 .orElseThrow(() ->
@@ -195,7 +194,7 @@ public class TaskService {
             task.setAssignedTo(user);
         }
 
-        return taskRepository.save(task);
+        taskRepository.save(task);
     }
 
     public void deleteTask(String taskId) {

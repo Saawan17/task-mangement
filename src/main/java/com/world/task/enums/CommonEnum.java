@@ -4,24 +4,15 @@ import com.world.task.dto.response.ResponseInterface;
 
 public enum CommonEnum implements ResponseInterface {
 
-    ULF("User Login in Failed"),
+    ALF("Admin Login in Failed"),
     SUCCESS("Operation SUCCESS"),
     DELETED("Delete Successfully"),
     UPDATED("Updated Successfully"),
-    INVALID("Invalid Responce"),
+    INVALID("Invalid Response"),
     NULL("null"),
-    EXISTS("Alreay exists"),
-    FAILURE("Failed"),
-    NOT_FOUND("not found"),
-    FORBIDDEN("Not Authorised"),
-    IBOT("Invalid Business Owner Type"),
-    OCS("Order Created Successfully"),
-    EWCO("Error While Creating Order"),
-    NUF("No User Found"),
-    BR("Bad Request"),
-    NO_DATA("No Data Found");
+    FAILURE("Failed");
 
-    private String response;
+    private final String response;
 
     // Constructor
     CommonEnum(String response) {

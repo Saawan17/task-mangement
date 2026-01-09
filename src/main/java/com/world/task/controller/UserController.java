@@ -105,7 +105,7 @@ public class UserController {
         userService.deleteUser(userId);
 
         return ResponseDTO.getResponseDto(
-                CommonEnum.SUCCESS,
+                CommonEnum.DELETED,
                 "200",
                 "User deleted successfully",
                 null,

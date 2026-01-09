@@ -136,6 +136,10 @@ All APIs in this application are secured using **JWT authentication**, except th
 
 This API is **mandatory** to access any secured endpoint.  
 The generated JWT token must be included in the `Authorization` header for all subsequent requests.
+>  **Token Validity:**  
+> The generated JWT token is valid for **1 hour**.  
+> After expiration, the client must re-authenticate using the login API to obtain a new token.
+
 
 
 ###### Request Body
@@ -207,8 +211,9 @@ All responses follow a consistent response structure.
 
 An optional Postman collection is included for easy testing of all APIs.
 
-File name:
-Task-Management.postman_collection.json
+#### File name:
+
+##### Task-Management.postman_collection.json
 
 ## How to Use:
 
@@ -224,7 +229,7 @@ Task-Management.postman_collection.json
 
 ## Notes for Reviewers:
 
-##### JWT credentials are static for assignment simplicity
+##### JWT credentials are static for assignment simplicity 
 
 ##### Focus is on clean architecture and correctness
 

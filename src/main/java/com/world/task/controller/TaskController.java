@@ -90,7 +90,7 @@ public class TaskController {
         taskService.updateTask(taskId, request);
 
         return ResponseDTO.getResponseDto(
-                CommonEnum.SUCCESS,
+                CommonEnum.UPDATED,
                 "200",
                 "Task updated successfully",
                 null,
@@ -104,7 +104,7 @@ public class TaskController {
         taskService.deleteTask(taskId);
 
         return ResponseDTO.getResponseDto(
-                CommonEnum.SUCCESS,
+                CommonEnum.DELETED,
                 "200",
                 "Task deleted successfully",
                 null,
@@ -120,7 +120,7 @@ public class TaskController {
         taskService.updateTaskStatus(taskId, request.getStatus());
 
         return ResponseDTO.getResponseDto(
-                CommonEnum.SUCCESS,
+                CommonEnum.UPDATED,
                 "200",
                 "Task status updated successfully",
                 null,
