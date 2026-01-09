@@ -124,30 +124,37 @@ Update src/main/resources/application.properties:
 Migration files are located at:
 src/main/resources/db/migration (PATH)
 
-## Authentication (JWT)
-Login to Generate JWT Token:
+## Authentication API (Important)
 
-Endpoint:
+All APIs in this application are secured using **JWT authentication**, except the login endpoint.
 
-POST /api/auth/login
+### Login API
+
+| Method | Endpoint | Description                                 |
+|------|---------|---------------------------------------------|
+| POST | `/api/auth/login` | Authenticate user and generate JWT token    |
+
+This API is **mandatory** to access any secured endpoint.  
+The generated JWT token must be included in the `Authorization` header for all subsequent requests.
 
 
-Request Body
+###### Request Body
 
 {
 "username": "admin",
+
 "password": "admin123"
 }
 
 
-Response
+###### Response
 
 {
 "data": "<JWT_TOKEN>"
 }
 
 
-Credentials are hardcoded for assignment simplicity. (Hardcoded Values)
+###### Credentials are hardcoded for assignment simplicity. (Hardcoded Values)
 
 ## Access Secured APIs
 
@@ -195,3 +202,37 @@ HTTP Status	Description
 500	Internal server error
 
 All responses follow a consistent response structure.
+
+## Postman Collection (Optional)
+
+An optional Postman collection is included for easy testing of all APIs.
+
+File name:
+Task-Management.postman_collection.json
+
+## How to Use:
+
+1) Open Postman
+
+2) Import the collection file
+
+3) Call the login API to generate JWT token
+
+4) Set the token in the Authorization header
+
+5) Test all secured APIs
+
+## Notes for Reviewers:
+
+##### JWT credentials are static for assignment simplicity
+
+##### Focus is on clean architecture and correctness
+
+##### Controllers handle only happy paths
+
+##### Services enforce business rules
+
+##### Global exception handling is used
+
+##### Database schema is managed using Flyway
+ 

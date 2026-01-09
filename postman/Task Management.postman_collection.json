@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "171b212a-9707-48a6-9ac0-c25ec3737895",
+		"name": "Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38344503"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sonu\",\r\n  \"email\": \"sonu12@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users/create/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Testing API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzkzNzYzOCwiZXhwIjoxNzY3OTQxMjM4fQ.ma1IfP6k7R_HSMA_JX80VcJyLskQWhMfy6UfBYkoers"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/users/test"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/get/all/users?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"get",
+								"all",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzkzNzYzOCwiZXhwIjoxNzY3OTQxMjM4fQ.ma1IfP6k7R_HSMA_JX80VcJyLskQWhMfy6UfBYkoers"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/users/get/36b042b"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzkzNzYzOCwiZXhwIjoxNzY3OTQxMjM4fQ.ma1IfP6k7R_HSMA_JX80VcJyLskQWhMfy6UfBYkoers"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/users/delete/user/36b042bb"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Write documentation\",\r\n  \"description\": \"Add README and API docs\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"priority\": \"MEDIUM\",\r\n  \"dueDate\": \"2026-01-20\",\r\n  \"assignedToUserId\":\"8e4916f2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/tasks/create/task"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all tasks by filters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/tasks/get/filter/IN_PROGRESS/MEDIUM/8e4916f2"
+					},
+					"response": []
+				},
+				{
+					"name": "Get task by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/tasks/get/f51f4f2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Update by task id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Write documentation and read\",\r\n  \"description\": \"Add README and API docs\",\r\n  \"status\": \"IN_PROGRESS\",\r\n  \"priority\": \"MEDIUM\",\r\n  \"dueDate\": \"2026-01-20\",\r\n  \"assignedToUserId\":\"8e4916f2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/tasks/update/f51f4f2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2Nzg5NDk2OSwiZXhwIjoxNzY3ODk4NTY5fQ.Wa4zgD6KPcfDkoTQcasuK53EUzfDMaSPVVorJJfAawU"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/tasks/delete/f51f4f2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Status Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2NzkzNzYzOCwiZXhwIjoxNzY3OTQxMjM4fQ.ma1IfP6k7R_HSMA_JX80VcJyLskQWhMfy6UfBYkoers"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"IN_PROGRESS\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/tasks/f51f4f2d/status"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/login"
+			},
+			"response": []
+		}
+	]
+}
