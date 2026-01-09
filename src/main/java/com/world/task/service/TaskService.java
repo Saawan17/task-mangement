@@ -74,7 +74,7 @@ public class TaskService {
         // Status filter
         if (!"ALL".equalsIgnoreCase(status)) {
             try {
-                taskStatus = TaskStatus.valueOf(status);
+                taskStatus = TaskStatus.valueOf(status.toUpperCase());
             } catch (Exception e) {
                 throw new IllegalArgumentException("Invalid task status");
             }
@@ -83,7 +83,7 @@ public class TaskService {
         // Priority filter
         if (!"ALL".equalsIgnoreCase(priority)) {
             try {
-                taskPriority = TaskPriority.valueOf(priority);
+                taskPriority = TaskPriority.valueOf(priority.toUpperCase());
             } catch (Exception e) {
                 throw new IllegalArgumentException("Invalid task priority");
             }
